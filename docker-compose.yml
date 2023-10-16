@@ -1,0 +1,14 @@
+version: '3'
+services:
+  bd-mysql:
+    build:
+      context: ./bd-mysql
+      dockerfile: Dockerfile
+    container_name: bd-mysql
+    command: --bind-address=0.0.0.0
+    environment:
+      MYSQL_ROOT_PASSWORD: 1170155
+      MYSQL_DATABASE: crud
+      MYSQL_USER: starling
+    ports:
+      - "3306:3306"
